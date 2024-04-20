@@ -1,4 +1,7 @@
 
+const	xiaoyao_show_text = "小遥儿处理中";
+
+
 const select_array = [
 	{
 		name: "我们约会吧~",
@@ -18,5 +21,6 @@ const select_array = [
 ]
 
 export {
+	xiaoyao_show_text,
 	select_array,
 }

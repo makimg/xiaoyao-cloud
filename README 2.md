@@ -22,6 +22,12 @@
 	<view slot="content">布局</view>
 </navigationBar>
 
+小程序分享匹配规则
+query
+1.url=/pages/xiaoyao/game/select/play/index-id.123-token.ccd
+scene
+2./pages/xiaoyao/game/select/play/index-id.123-token.ccd
+
 ---------------------开发资料结束---------------------
 ================================================================================================================
 |功能模块| | |

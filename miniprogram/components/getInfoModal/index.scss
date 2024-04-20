@@ -1,0 +1,64 @@
+
+
+.modal{
+	width: 100%;
+	.modal_wrap{
+		width: 100%;
+		padding: 30rpx;
+		.wrap_cont{
+			width: 100%;
+			margin-bottom: 60rpx;
+			.cont_body{
+				width: 100%;
+				padding: 60rpx 0 30rpx;
+				.items{
+					width: 100%;
+					&:first-child{
+						margin-bottom: 30rpx;
+					}							
+					.img_box{
+						width: 160rpx;
+						height: 160rpx;
+						border-radius: 50%;
+						position: relative;
+						.img_btns{
+							width: 100%;
+							height: 100%;
+							background: transparent;
+							border: none;
+							position: absolute;
+							top: 0;
+							left: 0;
+							z-index: 100;
+						}
+						.img{
+							width: 100%;
+							height: 100%;
+							position: relative;
+							z-index: 10;
+						}
+					}
+					.nick_label{
+						font-size: 26rpx;
+						color: #333333;
+						line-height: 52rpx;
+						margin-right: 20rpx;
+					}
+					.nick_value{
+						width: 100%;
+						height: 88rpx;
+						border-radius: 12rpx;
+						overflow: hidden;
+						border: 2rpx solid #eeeeee;
+					}
+				}
+			}
+		}
+		.wrap_flooter,.flooter_btn{
+			width: 100%;
+			.btns button{
+				border-radius: 20rpx;
+			}
+		}
+	}
+}

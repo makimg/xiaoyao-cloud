@@ -5,11 +5,42 @@
 	round
   show="{{_modal}}"
   position="bottom"
-  custom-style="height: 20%;"
+  custom-style="min-height: 20%;"
   bind:close="_onCloseModal">
-	<view class="">
-		<view class="">
-			
+	<view class="modal">
+		<view class="modal_wrap">
+			<view class="wrap_cont">
+				<view class="cont_body flex-column-center-center">
+					<view class="items flex-row-center-center">
+						<view class="img_box">
+							<button class="img_btns" open-type="chooseAvatar" bindchooseavatar="_onchooseavatar"></button>
+							<van-image class="img"
+								round
+								width="80px"
+								height="80px"
+								src="{{_user_avatar}}"
+							/>
+						</view>
+					</view>
+					<view class="items flex-row-start-center">
+						<view class="nick_label"><text>昵称：</text></view>
+						<view class="nick_value flex1">
+							<van-field
+								type="nickname"
+								model:value="{{_user_nickname}}"
+								placeholder="请输入昵称"
+								border="{{ false }}"
+								bindnicknamereview="_onNicknameReview"
+								/>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="wrap_flooter">
+				<view class="flooter_btn">
+					<van-button catchtap="_onsubmitinfo" class="btns" type="primary" color="#0081ff">提交</van-button>
+				</view>
+			</view>
 		</view>
 	</view>
 </van-popup>

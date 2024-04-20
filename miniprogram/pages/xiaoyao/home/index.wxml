@@ -1,7 +1,7 @@
 <page-meta page-style="{{ modalShow ? 'overflow: hidden;' : '' }}" />
 
 <view class="DrawerPage  {{modalName=='viewModal'?'show':''}}">
-	<scroll-view scroll-y class="index_pages">
+	<scroll-view scroll-y scroll-x="{{false}}" class="index_pages">
 		<view class="pages_wrap van-safe">
 			<view class="pages_head bg-gradual-blue animation-slide-top">
 				<view class="head_swiper">
@@ -56,7 +56,9 @@
 	<view class="index_hide_wrap" style="padding-top: {{StatusBar}}px;">
 		<view class="wrap_main">
 			<view class="wrap_head">
-				<view class="wrap_head_info animation{{modalName=='viewModal'?'-slide-top':''}} bg-gradual-pink flex-row-start-center" style="animation-delay: {{0.4}}s;">
+				<view class="wrap_head_info animation{{modalName=='viewModal'?'-slide-top':''}} bg-gradual-pink flex-row-start-center" 
+					catchtap="onOpenGetUserModal"
+					style="animation-delay: {{0.4}}s;">
 					<view class="wrap_info_avatar flex-row-center-center">
 						<van-icon name="contact-o" size="20px" color="#f8f8f8" />
 					</view>
@@ -100,4 +102,4 @@
 	</view>
 </view>
 
-<getInfoModal bindonChangeModalFlag="modalFlagChange"></getInfoModal>
+<getInfoModal id="info_modal" bindonChangeModalFlag="modalFlagChange"></getInfoModal>

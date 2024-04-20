@@ -1,7 +1,8 @@
 
-import {navigateTo} from "../../../utils/util";
+import {navigateTo, xiaoyao_share} from "../../../utils/util";
 const XIAOYAO_APP = getApp(); 
-let {StatusBar,CustomBar} = XIAOYAO_APP.globalData;
+let {globalData:{StatusBar,CustomBar},params_into} = XIAOYAO_APP;
+let GET_INFO_MODAL = null;
 Page({
 
   /**
@@ -51,12 +52,12 @@ Page({
       {
         name: "去分组",
         name_key: "allotGroup",
-        className: "h3 bg-gradual-red",
+        className: "h3 bg-gradual-black6",
       },
       {
         name: "去抽奖",
         name_key: "drawPrize",
-        className: "pumpPrize bg-gradual-red",
+        className: "pumpPrize bg-gradual-black7",
       },
     ],
     cardCur: 0,
@@ -89,7 +90,6 @@ Page({
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
-    toggleDelay: false,
     fly_array: [
       {
         name: "我参与的",
@@ -138,7 +138,7 @@ Page({
       },
       {
         name: "联系客服",
-        type: "concat",
+        type: "contact",
         icon: "user-o",
         color: "#5e00ff",
         button_flag: true,
@@ -156,23 +156,27 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  onLoad(options) {
     let that = this;
-    that.setData({toggleDelay:true});
-    that.towerSwiper('swiperList');
+		params_into(options);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    
+		let that = this;
+		GET_INFO_MODAL = that.selectComponent('#info_modal');
   },
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage(opts: { target: any }): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
-    return {}
+  onShareAppMessage(): WechatMiniprogram.Page.ICustomShareContent {
+		let that = this;
+		let share_obj = {
+			title: "乐逍遥",
+			path: "/pages/xiaoyao/home/index",
+		}
+    return xiaoyao_share(share_obj);
   },
   // 监听上传用户资料弹框滚动穿透
   modalFlagChange(event: { detail: { modalShow: any; }; }){
@@ -190,62 +194,12 @@ Page({
   hideModal() {
     let that = this;
     that.setData({modalName: ""})
-  },
-  // towerSwiper
-  // 初始化towerSwiper
-  towerSwiper(name: string | number) {
-    let that = this;
-    let list = that.data[name];
-    for (let i = 0; i < list.length; i++) {
-      list[i].zIndex = parseInt(list.length / 2) + 1 - Math.abs(i - parseInt(list.length / 2))
-      list[i].mLeft = i - parseInt(list.length / 2)
-    }
-    this.setData({
-      swiperList: list
-    })
-  },
-  // towerSwiper触摸开始
-  towerStart(e: { touches: { pageX: any; }[]; }) {
-    this.setData({
-      towerStart: e.touches[0].pageX
-    })
-  },
-  // towerSwiper计算方向
-  towerMove(e: { touches: { pageX: number; }[]; }) {
-    this.setData({
-      direction: e.touches[0].pageX - this.data.towerStart > 0 ? 'right' : 'left'
-    })
-  },
-  // towerSwiper计算滚动
-  towerEnd(e: any) {
-    let direction = this.data.direction;
-    let list = this.data.swiperList;
-    if (direction == 'right') {
-      let mLeft = list[0].mLeft;
-      let zIndex = list[0].zIndex;
-      for (let i = 1; i < list.length; i++) {
-        list[i - 1].mLeft = list[i].mLeft
-        list[i - 1].zIndex = list[i].zIndex
-      }
-      list[list.length - 1].mLeft = mLeft;
-      list[list.length - 1].zIndex = zIndex;
-      this.setData({
-        swiperList: list
-      })
-    } else {
-      let mLeft = list[list.length - 1].mLeft;
-      let zIndex = list[list.length - 1].zIndex;
-      for (let i = list.length - 1; i > 0; i--) {
-        list[i].mLeft = list[i - 1].mLeft
-        list[i].zIndex = list[i - 1].zIndex
-      }
-      list[0].mLeft = mLeft;
-      list[0].zIndex = zIndex;
-      this.setData({
-        swiperList: list
-      })
-    }
-  },
+	},
+	// 打开用户授权弹框
+	onOpenGetUserModal(event){
+		let that = this;
+		GET_INFO_MODAL._onShowModal();
+	},
   // 开始玩吧
   toPLay(event){
     let that = this;

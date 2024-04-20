@@ -1,3 +1,5 @@
+import { xiaoyao_share } from "../../../../../utils/util";
+
 // pages/xiaoyao/game/select/play/index.ts
 Page({
 
@@ -61,6 +63,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+		let that = this;
+		let share_obj = {
+			title: `乐逍遥：嘤嘤嘤，选择什么好呢～`,
+			path: `/pages/xiaoyao/game/select/play/index-id.123-token.ccd`,
+		}
+		return xiaoyao_share(share_obj);
   }
 })
