@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/xiaoyao/home/index",
+    "pages/xiaoyao/game/select/play/index",
+    "pages/xiaoyao/game/sort/play/index",
+    "pages/xiaoyao/game/vote/play/index",
+    "pages/xiaoyao/game/drawLots/play/index",
+    "pages/xiaoyao/game/allotTask/play/index",
+    "pages/xiaoyao/game/solitaire/play/index",
+    "pages/xiaoyao/game/lottery/play/index",
+    "pages/xiaoyao/game/allotGroup/play/index",
+    "pages/xiaoyao/game/pumpPrize/play/index",
+    "pages/xiaoyao/about/index",
+    "pages/xiaoyao/about/feedback/index",
+    "pages/xiaoyao/about/log/index",
+    "pages/index/index",
+    "pages/goods-list/index",
+    "pages/examples/index",
+    "pages/user-center/index",
+    "pages/exampleDetail/index",
+    "pages/deployService/index",
+    "pages/updateRecord/index",
+    "pages/updateRecordResult/index",
+    "pages/updateRecordSuccess/index",
+    "pages/sumRecord/index",
+    "pages/sumRecordResult/index",
+    "pages/web/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "乐逍遥",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "navigationBar": "./components/navigationBar/navigation-bar"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#A2A9B0",
+    "selectedColor": "#07C160",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "快速开始",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/examples/index",
+        "text": "云开发示例",
+        "iconPath": "images/icons/examples.png",
+        "selectedIconPath": "images/icons/examples-active.png"
+      },
+      {
+        "pagePath": "pages/user-center/index",
+        "text": "我",
+        "iconPath": "images/icons/usercenter.png",
+        "selectedIconPath": "images/icons/usercenter-active.png"
+      }
+    ]
+  }
+}

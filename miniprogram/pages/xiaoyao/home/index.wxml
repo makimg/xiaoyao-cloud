@@ -1,0 +1,103 @@
+<page-meta page-style="{{ modalShow ? 'overflow: hidden;' : '' }}" />
+
+<view class="DrawerPage  {{modalName=='viewModal'?'show':''}}">
+	<scroll-view scroll-y class="index_pages">
+		<view class="pages_wrap van-safe">
+			<view class="pages_head bg-gradual-blue animation-slide-top">
+				<view class="head_swiper">
+					<swiper class="screen-swiper square-dot rights-doteds" indicator-dots="{{false}}" circular="{{true}}" autoplay="true" interval="5000" duration="500">
+						<swiper-item wx:for="{{swiperList}}" wx:key="index">
+							<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+							<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+						</swiper-item>
+					</swiper>
+				</view>
+				<view class="head_cont flex-column-end-center">
+					<view class="cont_boxs flex-row-between-center">
+						<view class="head_icon" bindtap="showModal" data-value="viewModal">
+							<van-icon name="apps-o" size="30px" color="#FFFFFF" />
+						</view>
+						<view class="head_title flex1 flex-row-center-center">
+							<text class="title_text">乐逍遥</text>
+						</view>
+						<view class="head_icon"></view>
+					</view>
+				</view>
+			</view>
+			<view class="pages_body">
+				<view class="pages_swiper animation-slide-right">
+					<!-- <swiper class="screen-swiper square-dot" indicator-dots="{{false}}" circular="{{true}}" autoplay="true" interval="5000" duration="500">
+						<swiper-item wx:for="{{swiperList}}" wx:key="index">
+							<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+							<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+						</swiper-item>
+					</swiper> -->
+				</view>
+				<view class="pages_list flex-row-between-start">
+					<view class="list_left flex-column-start-center">
+						<block wx:for="{{game_array}}" wx:key="index">
+							<view catchtap="toPLay" data-keys="{{item.name_key}}" wx:if="{{index%2==0}}" class="list_items {{item.className}} animation-slide-bottom" style="animation-delay: {{(index+1)*0.1}}s;">{{item.name}}{{index+1}}</view>
+						</block>
+					</view>
+					<view class="list_right flex-column-start-center">
+						<block wx:for="{{game_array}}" wx:key="index">
+							<view catchtap="toPLay" data-keys="{{item.name_key}}" wx:if="{{index%2!=0}}" class="list_items {{item.className}} animation-slide-bottom" style="animation-delay: {{(index+1)*0.1}}s;">{{item.name}}{{index+1}}</view>
+						</block>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+	<text class="cuIcon-pullright"></text>
+</view>
+<view class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+	<view class="index_hide_wrap" style="padding-top: {{StatusBar}}px;">
+		<view class="wrap_main">
+			<view class="wrap_head">
+				<view class="wrap_head_info animation{{modalName=='viewModal'?'-slide-top':''}} bg-gradual-pink flex-row-start-center" style="animation-delay: {{0.4}}s;">
+					<view class="wrap_info_avatar flex-row-center-center">
+						<van-icon name="contact-o" size="20px" color="#f8f8f8" />
+					</view>
+					<view class="wrap_info_text flex1">
+						<view class="text_item flex-row-start-end">
+							<text class="txt name">张三丰</text>
+							<text class="txt">自由级</text>
+						</view>
+						<view class="text_item flex-row-start-end">
+							<text class="txt">嘿嘿嘿</text>
+							<text class="txt">哈哈哈</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="wrap_body">
+				<view class="body_fly flex-wrap-start">
+					<block wx:for="{{fly_array}}" wx:key="index">
+						<view class="fly_items {{item.color}} animation{{modalName=='viewModal'?'-slide-top':''}} flex-column-around-center" style="animation-delay: {{(index+0.1)*0.2}}s;">
+							<view><text>{{item.count}}</text></view>
+							<view><text>{{item.name}}</text></view>
+						</view>
+					</block>
+				</view>
+				<view class="cu-list animation{{modalName=='viewModal'?'-slide-top':''}} menu none card-menu shadow-lg radius" style="animation-delay: {{0.2}}s;">
+					<block wx:for="{{cont_array}}" wx:key="index">
+						<view class="cu-item arrow">
+							<button class="cu-btn content" open-type="{{item.type}}" wx:if="{{item.button_flag}}">
+								<van-icon class="margin-right-sm" name="{{item.icon}}" size="20px" color="{{item.color}}" />
+								<text class="text-grey">{{item.name}}</text>
+							</button>
+							<view class="content" bindtap="goLink" data-link="{{item.type}}" wx:else>
+								<van-icon class="margin-right-sm" name="{{item.icon}}" size="20px" color="{{item.color}}" />
+								<text class="text-grey">{{item.name}}</text>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<getInfoModal bindonChangeModalFlag="modalFlagChange"></getInfoModal>

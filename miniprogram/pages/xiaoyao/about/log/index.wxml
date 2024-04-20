@@ -1,0 +1,19 @@
+
+
+<view>
+	<navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
+		<view slot="backText">返回</view>
+		<view slot="content">小程序版本</view>
+	</navigationBar>
+	<view class="cu-timeline">
+		<view class="cu-item text-green">
+			<view class="bg-green content shadow">
+				<view class="cu-capsule radius">
+					<view class="cu-tag bg-white text-green">v1.0.0</view>
+					<view class="cu-tag line-white">2018/12/20</view>
+				</view>
+				<view class="margin-top-sm text-content">1.0版本上线</view>
+			</view>
+		</view>
+	</view>
+</view>

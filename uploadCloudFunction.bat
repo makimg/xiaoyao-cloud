@@ -1,0 +1,1 @@
+"D:\software\微信开发者工具22\微信web开发者工具\cli.bat" cloud functions deploy --e silents-0g9acbkb68a4da06 --n quickstartFunctions --r --project "E:\逍遥\2024-04\2024-04-15\xiaoyao-cloud" --report_first --report

@@ -1,0 +1,6 @@
+
+
+<navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">去投票</view>
+</navigationBar>
