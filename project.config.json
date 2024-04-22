@@ -45,6 +45,9 @@
     ],
     "minifyWXSS": true
   },
+  "lib": [
+    "ES2020"
+  ],
   "appid": "wx99384deb7b0a80e9",
   "projectname": "quickstart-wx-cloud",
   "libVersion": "2.20.1",
