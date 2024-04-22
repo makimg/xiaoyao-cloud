@@ -218,6 +218,5 @@ Page({
     } else {
       navigateTo(path);
     }
-    
   },
 })
