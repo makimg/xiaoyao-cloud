@@ -1,0 +1,76 @@
+
+
+.login-page{
+	width: 100%;
+	.page-wrap{
+		width: 100%;
+		.wrap-main{
+			width: 100%;
+			padding: 30rpx;
+			.main-logo{
+				width: 100%;
+				padding: 100rpx 30rpx;
+			}
+			.main-body{
+				width: 100%;
+				padding: 30rpx;
+				border: 2rpx solid #eeeeee;
+				border-radius: 16rpx;
+				margin-bottom: 30rpx;
+				.body-cont{
+					width: 100%;
+					.cont-item{
+						width: 100%;
+						margin-bottom: 20rpx;
+						.item-label{
+							width: 140rpx;
+							text{
+								font-size: 28rpx;
+								color: #888888;
+								line-height: 42rpx;
+							}
+						}
+						.item-value{
+							width: 100%;
+							border-bottom: 2rpx solid #EEEEEE;
+							margin-left: 10rpx;
+						}
+						&:last-child .item-value{
+							margin-right: 20rpx;
+						}
+						.item-btns{
+							.btns button{
+								width: 180rpx;
+								height: 80rpx;
+								font-size: 28rpx;
+								border-radius: 10rpx;
+							}
+						}
+					}
+				}
+			}
+			.main-note{
+				width: 100%;
+				margin-bottom: 300rpx;
+				.note-text{
+					font-size: 28rpx;
+					font-size: #333333;
+					line-height: 36rpx;
+					.link-text{
+						color: #0081ff;
+					}
+				}
+			}
+			.main-flooter{
+				width: 100%;
+				.flooter-view{
+					width: 80%;
+					margin: 0 auto;
+					.btns button{
+						border-radius: 12rpx;
+					}
+				}
+			}
+		}
+	}
+}

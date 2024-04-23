@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/xiaoyao/home/index",
+    "pages/xiaoyao/login/index",
     "pages/xiaoyao/game/select/play/index",
     "pages/xiaoyao/game/sort/play/index",
     "pages/xiaoyao/game/vote/play/index",
@@ -13,6 +14,8 @@
     "pages/xiaoyao/about/index",
     "pages/xiaoyao/about/feedback/index",
     "pages/xiaoyao/about/log/index",
+
+
     "pages/index/index",
     "pages/goods-list/index",
     "pages/examples/index",

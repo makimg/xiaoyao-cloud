@@ -697,7 +697,14 @@ function randomNum(minNum: number, maxNum: number) {
     } else {
       return familyNameItemsSin[randomNum(0, familyNameItemsSin.length - 1)];
     }
-  }
+	}
+	function getFourName(sur = false){
+		if(sur){
+			return `${familyNameItemsSur[randomNum(0, familyNameItemsSur.length - 1)]}${allName[randomNum(0,allName.length - 1)]}${allName[randomNum(0,allName.length - 1)]}`;
+    } else {
+			return `${familyNameItemsSur[randomNum(0, familyNameItemsSur.length - 1)]}${allName[randomNum(0,allName.length - 1)]}`;
+    }
+	}
 	function getFemaleName(sur: boolean | undefined) {
     const r = randomNum(0, 1);
     if (r === 0) {
@@ -728,6 +735,7 @@ function randomNum(minNum: number, maxNum: number) {
 		getNickFoot,
 		getNickName,
 		getFamilyName,
+		getFourName,
 		getFemaleName,
 		getMaleName,
 		getName,

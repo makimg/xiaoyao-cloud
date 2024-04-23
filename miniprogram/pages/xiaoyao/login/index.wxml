@@ -1,0 +1,51 @@
+
+
+<view class="login-page">
+	<view class="page-wrap">
+		<view class="wrap-bar">
+			<navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
+				<view slot="backText">返回</view>
+				<view slot="content">登录</view>
+			</navigationBar>
+		</view>
+		<view class="wrap-main flex-column-start-center">
+			<view class="main-logo flex-row-center-center">
+				<van-image width="80" height="80" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
+			</view>
+			<view class="main-body">
+				<view class="body-cont">
+					<view class="cont-item flex-row-between-center">
+						<view class="item-label"><text>手机号</text></view>
+						<view class="item-value flex1">
+							<van-field placeholder="请输入手机号" bind:input="onSmsPhone" border="{{ false }}" />
+						</view>
+					</view>
+					<view class="cont-item flex-row-between-center">
+						<view class="item-label"><text>短信验证码</text></view>
+						<view class="item-value flex1">
+							<van-field placeholder="请输入手机号" bind:input="onSmsCode" border="{{ false }}" />
+						</view>
+						<view class="item-btns">
+							<van-button catchtap="onGetSms" class="btns" type="primary" color="{{btnFlag?'#969799':'#0081ff'}}">{{sms_text}}</van-button>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="main-note">
+				<van-checkbox class="flex-row-start-center" value="{{ note_checked_flag }}" bind:change="onNoteChange" use-icon-slot>
+					<text class="note-text">登录即注册并同意<text class="link-text" catchtap="openPrivacyContract">《用户隐私知情同意书》</text></text>
+					<van-icon 
+						slot="icon" 
+						color="{{note_checked_flag?'#0081ff':'#333333'}}" 
+						name="{{ note_checked_flag ? 'stop-circle-o' : 'circle' }}" 
+						size="15px" />
+				</van-checkbox>
+			</view>
+			<view class="main-flooter">
+				<view class="flooter-view">
+					<van-button catchtap="onLogin" class="btns" type="primary" color="#0081ff">登录</van-button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

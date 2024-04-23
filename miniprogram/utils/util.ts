@@ -287,6 +287,16 @@ function xiaoyao_share(share_obj) {
 	share_obj.path = `${home_path}${share_obj.path}&token=${xiaoyao_token}`;
 	return share_obj;
 }
+// 手机号校验
+function validatePhoneNumber(phoneNumber) {  
+	// 定义手机号正则表达式  
+	const phoneRegex = /^1[3456789]\d{9}$/;
+	let phone_flag = false;  
+	// 使用test方法检查手机号是否符合格式  
+	if(phoneRegex.test(phoneNumber)) phone_flag = true;
+	console.log(`手机号格式${phone_flag?'正确':'错误'}`);  
+	return phone_flag;
+}  
 export {
 	formatTime,
 	getWxRequest,
@@ -311,4 +321,5 @@ export {
 	eventBugs,
 	getUserModel,
 	xiaoyao_share,
+	validatePhoneNumber,
 }

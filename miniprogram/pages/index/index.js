@@ -1,6 +1,6 @@
 const { envList } = require("../../envList");
-const { getNickName } = require("../../utils/randomName");
-const { getUserModel } = require("../../utils/util");
+const { getFourName, } = require("../../utils/randomName");
+const { getUserModel, showToast } = require("../../utils/util");
 const { cloudFunctions } = require("../../utils/util_cloud");
 const { QuickStartPoints, QuickStartSteps } = require("./constants");
 
@@ -14,10 +14,17 @@ Page({
     wx.showLoading({
       title: '获取用户信息',
     })
-    let event_data = {funName:"xiaoyao_getUserInfo",userModel:getUserModel()}
-    cloudFunctions(event_data,result=>{
-      console.log("获取用户信息,index",result);
-    })
+    console.log(getFourName(true),);
+    // let event_data = {funName:"xiaoyao_getUserInfo",params_data:{}}
+    // cloudFunctions(event_data,res=>{
+    //   console.log("获取用户信息,index",res);
+    //   let {code,status} = res.result;
+    //   if(code===200&&status){
+    //     showToast("登录成功","none",1500);
+    //   } else {
+    //     wx.hideLoading()
+    //   }
+    // })
   },
   copyCode(e) {
     const code = e.target?.dataset?.code || '';
