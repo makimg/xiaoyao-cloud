@@ -730,7 +730,7 @@ function randomNum(minNum: number, maxNum: number) {
     }
   }
 
-	module.exports={
+export {
 		getNickHeader,
 		getNickFoot,
 		getNickName,

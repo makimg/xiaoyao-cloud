@@ -1,0 +1,90 @@
+
+
+<view class="loginAccount">
+	<view class="wrap">
+		<view class="bar">
+			<!-- <navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
+				<view slot="backText">返回</view>
+				<view slot="content">登录</view>
+			</navigationBar> -->
+		</view>
+		<view class="body">
+			<view class="logo flex-row-center-center">
+				<van-image width="80" height="80" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
+			</view>
+			<view class="cont flex-column-start-center">
+				<view class="from">
+					<view class="cont-item flex-row-between-center">
+						<view class="item-label"><text>座右铭</text></view>
+						<view class="item-value flex1">
+							<van-field placeholder="请选择您的座右铭" readonly value="{{mottoValue}}" border="{{ false }}" />
+						</view>
+						<view class="item-btns">
+							<van-button 
+								catchtap="onChangeMottoIng" 
+								loading="{{changeMottoIng}}" 
+								loading-text="加载中" 
+								class="btns" 
+								type="primary" 
+								color="linear-gradient(to right,  #6149f6, #4bb0ff)">随机切换</van-button>
+					</view>
+					</view>
+					<view class="cont-item flex-row-between-center">
+						<view class="item-label"><text>账号</text></view>
+						<view class="item-value flex1">
+							<van-field placeholder="请输入您的账号" bind:input="onMottoAccoutInput" maxlength="{{12}}" border="{{ false }}" />
+						</view>
+					</view>
+					<view class="cont-item flex-row-between-center">
+						<view class="item-label"><text>密码</text></view>
+						<view class="item-value flex1">
+							<van-field placeholder="请输入密码" password bind:input="onMottoPasswordInput" maxlength="{{18}}" border="{{ false }}" />
+						</view>
+					</view>
+					<view class="cont-item flex-row-end-center">
+						<view class="item-stronge flex-row-end-center">
+							<block wx:for="{{strengthList}}" wx:key="index">
+								<view class="stronge-box {{strengthLevel>25?'max':(strengthLevel>15?'middel':(strengthLevel>10?'small':''))}} flex-column-start-center">
+									<view class="lines"><text></text></view>
+									<!-- <view class="text"><text>{{item}}</text></view> -->
+								</view>
+							</block>
+						</view>
+					</view>
+					<view class="cont-item flex-row-between-center">
+						<view class="item-label"><text>确认密码</text></view>
+						<view class="item-value flex1">
+							<van-field placeholder="请输入密码" password bind:input="onMottoPasswordInput" maxlength="{{18}}" border="{{ false }}" />
+						</view>
+					</view>
+				</view>
+				<view class="tip">
+					<view class="tip-text"><text>账号：只允许字母、数字，长度在6-12之间</text></view>
+					<view class="tip-text"><text>密码：只允许字母、数字，长度在6~18之间，必须包含大小写字母</text></view>
+				</view>
+			</view>
+			<view class="note">
+				<van-checkbox class="flex-row-start-center" value="{{noteCheckedFlag}}" bind:change="onNoteChange" use-icon-slot>
+					<text class="note-text">登录即注册并同意<text class="link-text" catchtap="openPrivacyContract">《用户隐私知情同意书》</text></text>
+					<van-icon 
+						slot="icon" 
+						color="{{noteCheckedFlag?'#0081ff':'#333333'}}" 
+						name="{{ noteCheckedFlag ? 'stop-circle-o' : 'circle' }}" 
+						size="15px" />
+				</van-checkbox>
+			</view>
+			<view class="flooter">
+				<view class="flooter-view">
+					<van-button
+						class="btns" 
+						bind:click="login" 
+						loading="{{mottoLoginIng}}"
+						disabled="{{mottoLoginIng}}" 
+						loading-text="登录中..."
+						type="primary" 
+						color="linear-gradient(to right, #4bb0ff, #6149f6)">登录</van-button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

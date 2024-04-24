@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/xiaoyao/loginAccount/index",
     "pages/xiaoyao/home/index",
     "pages/xiaoyao/login/index",
     "pages/xiaoyao/game/select/play/index",

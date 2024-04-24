@@ -17,11 +17,11 @@ exports.main = async (event, context) => {
   let {funName,type,params_data} = event;
   switch (funName){
     case 'xiaoyao_login':
-      return await xiaoyao_login.main(params_data, context);
+      return await xiaoyao_login.main(event, context);
     case 'xiaoyao_getUserInfo':
-      return await xiaoyao_getUserInfo.main(params_data, context);
+      return await xiaoyao_getUserInfo.main(event, context);
     case 'xiaoyao_sendSMS':
-      return await xiaoyao_sendSMS.main(params_data, context);
+      return await xiaoyao_sendSMS.main(event, context);
   }
   switch (type) {
     case 'getOpenId':

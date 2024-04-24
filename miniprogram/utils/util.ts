@@ -106,7 +106,7 @@ function showToast(title: string, icon: string, duration: number | undefined) {
 }
 
 //隐藏toast状态
-function hideToast(callback) {
+function hideToast(callback: { (): void; (): any } | undefined) {
 	let show_timeout: any = null;
 	if (callback) {
 		show_timeout = setTimeout(() => {
@@ -140,8 +140,43 @@ function setNavigationBarTitle(title: any) {
 	})
 }
 
+
+// 函数防抖（debounce）：在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。
+function debounce(func: { apply: (arg0: any, arg1: any[]) => void }, delay: number | undefined) {
+    let timer: number;
+    return function (...args: any) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+// 函数节流（throttle）：每隔一段时间，只执行一次函数。
+// const throttle = (fn: { (): void; (): { (): any; new(): any; apply: { (arg0: undefined, arg1: any): void; new(): any } } }, delay: number | undefined) => {
+// 	let timer:any = null;
+// 	let that = this;
+// 	return (args: any) => {
+// 			if (timer) return;
+// 			timer = setTimeout(() => {
+// 					fn().apply(that, args);
+// 					timer = null;
+// 			}, delay);
+// 	}
+// }
+
+function throttle(func: { apply: (arg0: any, arg1: any[]) => void }, delay: number) {
+	let lastTime = 0;
+	return function (...args: any) {
+		const now = new Date().getTime();
+		if (now - lastTime >= delay) {
+			func.apply(this, args);
+			lastTime = now;
+		}
+	};
+}
+
 // 使用函数节流防止重复点击
-function throttle(fn: { apply: (arg0: any, arg1: IArguments) => void }, gapTime: number | null | undefined) {
+function throttle2(fn: { apply: (arg0: any, arg1: IArguments) => void }, gapTime: number | null | undefined) {
 	if (gapTime == null || gapTime == undefined) {
 		gapTime = 1000
 	}
@@ -155,6 +190,7 @@ function throttle(fn: { apply: (arg0: any, arg1: IArguments) => void }, gapTime:
 		}
 	}
 }
+
 
 
 // 文件====================================================================
@@ -281,14 +317,14 @@ function getUserModel() {
 	return modelInfo;
 }
 // 封装分享
-function xiaoyao_share(share_obj) {
+function xiaoyao_share(share_obj: { path: string }) {
 	let xiaoyao_token = wx.getStorageSync("token");
 	let home_path = `/pages/xiaoyao/home/index?url=`;
 	share_obj.path = `${home_path}${share_obj.path}&token=${xiaoyao_token}`;
 	return share_obj;
 }
 // 手机号校验
-function validatePhoneNumber(phoneNumber) {  
+function validatePhoneNumber(phoneNumber: string) {  
 	// 定义手机号正则表达式  
 	const phoneRegex = /^1[3456789]\d{9}$/;
 	let phone_flag = false;  
@@ -297,6 +333,43 @@ function validatePhoneNumber(phoneNumber) {
 	console.log(`手机号格式${phone_flag?'正确':'错误'}`);  
 	return phone_flag;
 }  
+
+// 帐号是否合法(字母开头，允许6-12字节，允许字母数字)：
+function mottoAccoutCheck(mottoAccout){
+	return /^[a-zA-Z][a-zA-Z0-9]{6,12}$/.test(mottoAccout);
+}
+
+// 密码(以字母开头，长度在6~15之间，只能包含字母、数字和下划线)：
+function mottoPassWordCheck(mottoPassWord){
+	return /^[a-zA-Z]\w{6,15}$/.test(mottoPassWord);
+}
+
+// 强密码(必须包含大写字母，小写字母的组合，长度在6-18之间，只能包含字母和数字)：
+function mottoPassWordMaxCheck(mottoPassMaxWord){
+	return /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,18}$/.test(mottoPassMaxWord);
+}
+
+// 密码强度检测
+function checkPasswordStrength(password) {
+  const minLength = 8;
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumbers = /\d/.test(password);
+  const hasSpecialChars = /[\W_]/.test(password);
+  // 密码长度
+  const lengthBonus = password.length >= minLength ? 10 : (password.length > 5) ? 5 : 0;
+  // 大小写字母、数字、特殊字符
+  const caseBonus = hasUpperCase && hasLowerCase ? 10 : 0;
+  const numberBonus = hasNumbers ? 10 : 0;
+  const specialCharBonus = hasSpecialChars ? 10 : 0;
+  // 总分
+  const totalScore = lengthBonus + caseBonus + numberBonus + specialCharBonus;
+  // 强度等级
+  // const strengthLevels = ['弱', '中', '强'];
+	// const strengthLevel = totalScore > 30 ? strengthLevels[2] : (totalScore > 15 ? strengthLevels[1] : strengthLevels[0]);
+	return totalScore;
+}
+
 export {
 	formatTime,
 	getWxRequest,
@@ -311,7 +384,9 @@ export {
 	hideToast,
 	pageScrollTo,
 	setNavigationBarTitle,
+	debounce,
 	throttle,
+	throttle2,
 	mkDownloadFile,
 	mkOpenDocument,
 	previewImage,
@@ -322,4 +397,8 @@ export {
 	getUserModel,
 	xiaoyao_share,
 	validatePhoneNumber,
+	mottoAccoutCheck,
+	mottoPassWordCheck,
+	mottoPassWordMaxCheck,
+	checkPasswordStrength,
 }

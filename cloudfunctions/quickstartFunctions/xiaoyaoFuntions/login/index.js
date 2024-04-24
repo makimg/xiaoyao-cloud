@@ -11,22 +11,28 @@ exports.main = async (event, context) => {
 	// 获取基础信息
 	const wxContext = cloud.getWXContext();
 	const {OPENID,APPID,UNIONID} = wxContext;
-	let {total} = await user_db.where({OPENID}).count();
+	console.log("云端获取到的用户信息",event);
+	let {params_data} = event;
+	let {accoutNumber,accoutPassword,userModel} = params_data;
+	// let {total} = await user_db.where({OPENID}).count();
+	let {total} = await user_db.where({
+		"userInfo.accoutNumber": accoutNumber,
+		"userInfo.accoutPassword": accoutPassword,
+	}).count();
 	// 返回数据库查询结果
 	console.log("云端获取到的用户信息",total,event);
-	let {needWinDowInfo,windowInfo,deviceInfo} = event.userModel;
+	let {needWinDowInfo,windowInfo,deviceInfo} = userModel;
 	if(total){
 		// 老用户更新用户手机信息
 		await user_db.where({OPENID}).update({data: {needWinDowInfo,windowInfo,deviceInfo}})
 	} else {
 		// 新用户增加记录
-		let create_new_user_info = {needWinDowInfo,windowInfo,deviceInfo,OPENID,APPID,UNIONID,userInfo:{}};
+		let create_new_user_info = {needWinDowInfo,windowInfo,deviceInfo,OPENID,APPID,UNIONID,userInfo:{accoutNumber,accoutPassword,}};
 		create_new_user_info.userInfo["register_time"] = new Date().getTime();
 		create_new_user_info.userInfo["user_type"] = "new";
 		create_new_user_info.userInfo["login_flag"] = false;
 		create_new_user_info.userInfo["avatar"] = "";
 		create_new_user_info.userInfo["phone_number"] = "";
-		create_new_user_info.userInfo["nickName"] = getFourName(true) || "";
 		create_new_user_info.userInfo["unionid"] = UNIONID || "";
 		create_new_user_info.userInfo["openid"] = OPENID || "";
 		create_new_user_info.userInfo["token"] = generateRandomString(18);
