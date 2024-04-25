@@ -3,15 +3,6 @@
     "pages/xiaoyao/loginAccount/index",
     "pages/xiaoyao/home/index",
     "pages/xiaoyao/login/index",
-    "pages/xiaoyao/game/select/play/index",
-    "pages/xiaoyao/game/sort/play/index",
-    "pages/xiaoyao/game/vote/play/index",
-    "pages/xiaoyao/game/drawLots/play/index",
-    "pages/xiaoyao/game/allotTask/play/index",
-    "pages/xiaoyao/game/solitaire/play/index",
-    "pages/xiaoyao/game/lottery/play/index",
-    "pages/xiaoyao/game/allotGroup/play/index",
-    "pages/xiaoyao/game/pumpPrize/play/index",
     "pages/xiaoyao/about/index",
     "pages/xiaoyao/about/feedback/index",
     "pages/xiaoyao/about/log/index",
@@ -43,6 +34,30 @@
   },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
+  "subPackages": [
+    {
+      "root": "pages/xiaoyao/game",
+      "name": "game",
+      "pages": [
+        "select/play/index",
+        "sort/play/index",
+        "vote/play/index",
+        "drawLots/play/index",
+        "allotTask/play/index",
+        "solitaire/play/index",
+        "lottery/play/index",
+        "allotGroup/play/index",
+        "pumpPrize/play/index",
+        "xiaoyaoAI/play/index"
+      ],
+      "plugins": {
+        "chatbot": {
+          "version": "1.4.1",
+          "provider": "wx8c631f7e9f2465e1"
+        }
+      }
+    }
+  ],
   "tabBar": {
     "color": "#A2A9B0",
     "selectedColor": "#07C160",

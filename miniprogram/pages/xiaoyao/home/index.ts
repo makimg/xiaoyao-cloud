@@ -2,7 +2,7 @@
 import {navigateTo, xiaoyao_share} from "../../../utils/util";
 const XIAOYAO_APP = getApp(); 
 let {globalData:{StatusBar,CustomBar},params_into} = XIAOYAO_APP;
-let GET_INFO_MODAL = null;
+let GET_INFO_MODAL:any = null;
 Page({
 
   /**
@@ -18,6 +18,11 @@ Page({
         name: "去选择",
         name_key: "select",
         className: "bg-gradual-red",
+      },
+      {
+        name: "排顺序",
+        name_key: "sort",
+        className: "h4 bg-gradual-black",
       },
       {
         name: "排顺序",
@@ -77,18 +82,6 @@ Page({
       id: 3,
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-    }, {
-      id: 4,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
     fly_array: [
       {

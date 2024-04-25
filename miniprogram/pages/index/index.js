@@ -11,9 +11,9 @@ Page({
   },
   onLoad(){
     let that = this;
-    wx.showLoading({
-      title: '获取用户信息',
-    })
+    // wx.showLoading({
+    //   title: '获取用户信息',
+    // })
     console.log(getFourName(true),);
     // let event_data = {funName:"xiaoyao_getUserInfo",params_data:{}}
     // cloudFunctions(event_data,res=>{

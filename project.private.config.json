@@ -7,6 +7,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/xiaoyao/game/xiaoyaoAI/play/index",
+          "pathName": "pages/xiaoyao/game/xiaoyaoAI/play/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "首页-快速开始",
           "pathName": "pages/index/index",
           "query": ""
