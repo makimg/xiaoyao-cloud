@@ -2,12 +2,12 @@
 
 <view class="chatAi">
 	<view class="wrap">
-		<!-- <view class="bar">
+		<view class="bar">
 			<navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
 				<view slot="backText">返回</view>
-				<view slot="content">去投票</view>
+				<view slot="content">逍遥微聊</view>
 			</navigationBar>
-		</view> -->
+		</view>
 		<view class="chatScroll" style="height: calc(100vh - {{CustomBar}}px);">
 			<chat
 					bind:queryCallback="getQueryCallback"

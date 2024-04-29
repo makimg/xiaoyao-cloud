@@ -20,8 +20,8 @@ Page({
         className: "bg-gradual-red",
       },
       {
-        name: "排顺序",
-        name_key: "sort",
+        name: "逍遥微聊",
+        name_key: "tools/xiaoyaoAI",
         className: "h4 bg-gradual-black",
       },
       {
@@ -38,6 +38,11 @@ Page({
         name: "来抓阄",
         name_key: "drawLot",
         className: "bg-gradual-black2",
+      },
+      {
+        name: "逍遥翻译",
+        name_key: "tools/xiaoyaoAI",
+        className: "h4 bg-gradual-black",
       },
       {
         name: "分任务",
@@ -58,6 +63,11 @@ Page({
         name: "去分组",
         name_key: "allotGroup",
         className: "h3 bg-gradual-black6",
+      },
+      {
+        name: "逍遥智能识别",
+        name_key: "tools/xiaoyaoOcr",
+        className: "h4 bg-gradual-black",
       },
       {
         name: "去抽奖",

@@ -48,7 +48,9 @@
         "lottery/play/index",
         "allotGroup/play/index",
         "pumpPrize/play/index",
-        "xiaoyaoAI/play/index"
+        "tools/xiaoyaoAI/play/index",
+        "tools/xiaoyaoTranslate/play/index",
+        "tools/xiaoyaoOcr/play/index"
       ],
       "plugins": {
         "chatbot": {

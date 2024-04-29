@@ -1,0 +1,82 @@
+
+
+.translate{
+	width: 100%;
+	min-height: 100vh;
+	.wrap{
+		width: 100%;
+		.bar{
+			width: 100%;
+			height: 200rpx;
+		}
+		.main{
+			width: 100%;
+			padding: 30rpx;
+			.body{
+				width: 100%;
+				.inputs,.allocation,.result{
+					width: 100%;
+					padding: 30rpx;
+					background: #FFFFFF;
+					border-radius: 16rpx;
+					margin-bottom: 30rpx;
+				}
+				.inputs{
+					width: 100%;
+					.values{
+						width: 100%;
+						padding: 12rpx 0;
+						border-radius: 12rpx;
+						.van-cell{
+							background: transparent;
+						}
+						.ccint{
+							color: #FFFFFF;
+							font-weight: 600;
+						}
+					}
+				}
+				.allocation{
+					padding-bottom: 10rpx;
+					.btns{
+						min-width: 30%;
+						margin-right: 4%;
+						margin-bottom: 20rpx;
+						border-radius: 10rpx;
+						&:nth-of-type(1),&:nth-of-type(2){
+							width: 48%;
+						}
+						&:nth-of-type(2),
+						&:nth-of-type(5){
+							margin-right: 0;
+						}
+						button{
+							padding: 0 20rpx;
+							border-radius: 10rpx;
+							background: transparent;
+							font-size: 28rpx;
+						}
+					}
+				}
+				.result{
+					width: 100%;
+					.text{
+						font-size: 32rpx;
+						color: #333333;
+						font-weight: 600;
+						line-height: 46rpx;
+						word-break: break-all;
+					}
+				}
+				.copy{
+					width: 100%;
+					padding: 30rpx;
+					button{
+						width: 240rpx;
+						border-radius: 12rpx;
+					}
+				}
+			}
+		}
+	}
+}

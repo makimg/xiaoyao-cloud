@@ -1,0 +1,46 @@
+
+<view class="translate bg-gradual-purple">
+	<view class="wrap">
+		<view class="bar">
+			<navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
+				<view slot="backText">返回</view>
+				<view slot="content">逍遥翻译</view>
+			</navigationBar>
+		</view>
+		<view class="main">
+			<view class="body">
+				<view class="inputs">
+					<view class="values bg-gradual-blue">
+						<van-field
+							model:value="{{keyword}}"
+							type="textarea"
+							placeholder="请输入您要翻译的内容"
+							autosize="{{autosize}}"
+							input-class="ccint"
+							border="{{ false }}"
+						/>
+					</view>
+				</view>
+				<view class="allocation">
+					<view class="list flex-wrap-start">
+						<block wx:for="{{multilingualMT_list}}" wx:key="index">
+							<van-button class="btns" catchtap="onTranslate" data-cli-index="{{index}}" type="primary" color="linear-gradient(to right,  #6149f6, #4bb0ff)">{{item.name}}</van-button>
+						</block>
+					</view>
+				</view>
+				<view class="animation-{{result&&result!=''?'fade':''}}" wx:if="{{result&&result!=''}}">
+					<view class="result" >
+						<view class="text flex-wrap-start">
+							<block wx:for="{{result}}" wx:key="index">
+								<text class="{{item?'animation-slide-right':''}}" style="animation-delay: {{(index+1)*0.05}}s;">{{item}}</text>
+							</block>
+						</view>
+					</view>
+					<view class="copy flex-row-center-center">
+						<van-button catchtap="onCopyResult" class="btns" type="primary" color="linear-gradient(45deg, #f43f3b, #ec008c)">复制</van-button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

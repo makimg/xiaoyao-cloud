@@ -7,6 +7,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/xiaoyao/game/tools/xiaoyaoTranslate/play/index",
+          "pathName": "pages/xiaoyao/game/tools/xiaoyaoTranslate/play/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/xiaoyao/game/xiaoyaoAI/play/index",
           "pathName": "pages/xiaoyao/game/xiaoyaoAI/play/index",
           "query": "",
