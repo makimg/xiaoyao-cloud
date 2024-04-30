@@ -1,5 +1,5 @@
 
-const	xiaoyao_show_text = "小遥儿处理中";
+const xiaoyao_show_text = "小遥儿处理中";
 
 
 const select_array = [

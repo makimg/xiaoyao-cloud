@@ -18,10 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    let that = this;
-    setTimeout(function(){
-      that.setData({result:"这击杀挖一年"})
-    },2000)
+    
   },
 
   /**
@@ -78,15 +75,15 @@ Page({
     let {cliIndex} = event.currentTarget.dataset;
     let {multilingualMT_list,keyword} = that.data;
     let q = keyword.trim();
-    let {tolang} = multilingualMT_list[cliIndex]
+    let {toLang} = multilingualMT_list[cliIndex]
     if(q.length===0||q==""||q==undefined) return showToast("请输入翻译内容","none",1500);
-    let translateInfo = {q: keyword,tolang,};
+    let translateInfo = {q: keyword,toLang,};
     showToast("处理中...","loading",20000);
     that.setData({result:""});
     console.log("翻译参数",translateInfo);
     serviceMarket("multilingualMT",translateInfo,(res)=>{
       console.log(res,"翻译结果")
-      if(res&&res?.data) {
+      if(res&&res.data) {
         let {data:{Result}} = res;
         showToast("翻译成功","none",1500);
         that.setData({result:Result})

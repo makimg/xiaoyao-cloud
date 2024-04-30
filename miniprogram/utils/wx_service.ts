@@ -12,11 +12,11 @@ const service_list = [
 	}
 ]
 const multilingualMT_list = [
-	{tolang:"zh_CN",name:"中文（简体）"},
-	{tolang:"zh_TW",name:"中文（繁体）"},
-	{tolang:"en",name:"英语"},
-	{tolang:"ko",name:"韩语"},
-	{tolang:"ja",name:"日语"},];
+	{toLang:"zh_CN",name:"中文（简体）"},
+	{toLang:"zh_TW",name:"中文（繁体）"},
+	{toLang:"en",name:"英语"},
+	{toLang:"ko",name:"韩语"},
+	{toLang:"ja",name:"日语"},];
 const serviceMarket = (serviceAPI,serviceData,callback)=>{
 	let service_info:any = [],serviceAPI_obj={};
 	service_info = service_list.findIndex(x=>{return x.api===serviceAPI});
@@ -24,6 +24,7 @@ const serviceMarket = (serviceAPI,serviceData,callback)=>{
 		let {service,api} = service_list[0];
 		serviceAPI_obj = {service,api};
 	}
+	console.log(serviceAPI_obj,serviceData)
 	wx.serviceMarket.invokeService({
 		...serviceAPI_obj,
 		data: serviceData,
@@ -35,4 +36,11 @@ const serviceMarket = (serviceAPI,serviceData,callback)=>{
 		callback && callback(err)
 	})
 }
-export {serviceMarket,multilingualMT_list}
+const serviceCDN = (filePath)=>{
+	return new wx.serviceMarket.CDN({type: 'filePath',filePath,})
+}
+export {
+	serviceMarket,
+	multilingualMT_list,
+	serviceCDN,
+}

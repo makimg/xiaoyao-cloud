@@ -1,0 +1,26 @@
+
+
+<view class="">
+	<view class="">
+		<view class="">
+		</view>
+		<view class="" >
+			<poster-component
+				wx:if="{{flag}}"
+				btnImg="{{btnImg}}"
+				btnText="{{btnText}}"
+				layoutType="{{layoutType}}"
+				bgColor="{{bgColor}}"
+				imgData="{{imgData}}"
+				shopData="{{shopData}}"
+				titleData="{{titleData}}"
+				userImg="{{userImg}}"
+				userName="{{userName}}"
+				codeImg="{{codeImg}}"
+				tipsData="{{tipsData}}"
+				logoImg="{{logoImg}}"
+				logoTitle="{{logoTitle}}"
+			></poster-component>
+		</view>
+	</view>
+</view>

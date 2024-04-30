@@ -370,6 +370,24 @@ function checkPasswordStrength(password) {
 	return totalScore;
 }
 
+const chooseMediaFile = (count,callback)=>{
+	wx.chooseMedia({
+		count,
+		mediaType: ['image'],
+		sourceType: ['album', 'camera'],
+		camera: 'back',
+		success(res) {
+			console.log(res.tempFiles[0].tempFilePath)
+			console.log(res.tempFiles[0].size)
+			callback && callback(res);
+		}
+	})
+}
+
+const upLoadMediaFile = ()=>{
+	
+}
+
 export {
 	formatTime,
 	getWxRequest,
@@ -401,4 +419,6 @@ export {
 	mottoPassWordCheck,
 	mottoPassWordMaxCheck,
 	checkPasswordStrength,
+	chooseMediaFile,
+	upLoadMediaFile,
 }

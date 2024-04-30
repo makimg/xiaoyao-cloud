@@ -1,0 +1,23 @@
+
+
+
+<player-component id="tvp-id" playerid="tvp" vid="s00242sxrne">
+  腾讯视频
+</player-component>
+<!-- // 组件ID
+//播放器ID
+// 视频ID
+// 观众信息
+// 是否自动播放
+//事件绑定 -->
+<polyv-player 
+  id="{{playerId}}" 
+  playerId="{{playerId}}"
+  vid="{{vid}}" 
+  viewerInfo="{{viewerInfo}}" 
+  autoplay="{{true}}"
+  bind:statechange="onStateChange"
+  >
+  <!-- 使用具名插槽，实现在全屏和非全屏的情况，在 video 组件上显示内容 -->
+  <view slot="custom">保利威</view>
+</polyv-player>

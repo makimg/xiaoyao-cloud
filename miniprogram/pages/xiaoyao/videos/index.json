@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "player-component": "plugin://player/video",
+    "polyv-player": "plugin://polyv-player/player"
+  }
+}

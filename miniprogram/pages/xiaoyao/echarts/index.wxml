@@ -1,0 +1,5 @@
+
+
+
+
+<chart chart-class="chart" option="{{ option }}" bindinstance="onInstance" />
