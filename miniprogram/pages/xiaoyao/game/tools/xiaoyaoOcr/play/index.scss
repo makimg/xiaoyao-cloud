@@ -1,1 +1,53 @@
-/* pages/xiaoyao/game/tools/xiaoyaoOcr/play/index.wxss */
+
+
+
+.ocr{
+	width: 100%;
+	min-height: 100vh;
+	background: #EEEEEE;
+	.wrap{
+		.main{
+			.bars{
+
+			}
+			.notice{
+
+			}
+			.body{
+				.cont{
+					width: 100%;
+					padding: 30rpx;
+					.img_up{
+						width: 100%;
+						background: #FFFFFF;
+						padding: 30rpx;
+						border-radius: 12rpx;
+						.boxs{
+							width: 100%;
+							height: 260rpx;
+							.ocrUp{
+								width: 100%;
+								height: 260rpx;
+								background: #EEEEEE;
+								border: 1rpx solid #e6e4e4;
+								border-radius: 10rpx;
+								.text{
+									font-size: 28rpx;
+									color: #6d6c6c;
+									margin-top: 20rpx;
+								}
+							}
+						}
+					}
+					.ocr_btns{
+						width: 100%;
+						padding: 30rpx;
+						.btns button{
+							border-radius: 10rpx;
+						}
+					}
+				}
+			}
+		}
+	}
+}

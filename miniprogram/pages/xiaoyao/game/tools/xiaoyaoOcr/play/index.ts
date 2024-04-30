@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    active: 0,
+    ocr_list:[
+      {name: "身份证",type: 1,},
+      {name: "银行卡",type: 2,},
+      {name: "行驶证",type: 3,},
+      {name: "驾驶证",type: 4,},
+      {name: "营业执照",type: 7,},
+      {name: "通用识别",type: 8,},
+      {name: "车牌识别",type: 10,},
+    ]
   },
 
   /**

@@ -1,8 +1,17 @@
+
+
+1: ID card; 1：身份证；
+2: Bank card; 2：银行卡；
+3: Driving license; 3：行驶证；
+4: Driver's license; 4：驾驶证；
+7: Business license; 7：营业执照；
+8: Universal OCR; 8：通用OCR;
+10: car-card-license 10: 车牌识别;
+
+
 服务接口
-API Name
-OcrAllInOne
-Service ID
-wx79ac3de8be320b71
+API OcrAllInOne
+Service ID wx79ac3de8be320b71
 接口调用说明
 详细说明
 API
