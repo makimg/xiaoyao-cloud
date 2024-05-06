@@ -384,8 +384,72 @@ const chooseMediaFile = (count,callback)=>{
 	})
 }
 
-const upLoadMediaFile = ()=>{
-	
+//时间戳转化为日期
+function formatDated(timeStr, nums,flag=false) {
+  if (typeof (timeStr) == 'undefined') {
+    return ''
+  } else {
+    let date = new Date(parseInt(timeStr))
+    let y:any = date.getFullYear()
+    let MM:any = date.getMonth() + 1
+    MM = MM < 10 ? ('0' + MM) : MM
+    let d:any = date.getDate()
+    if(nums!=10) d = d < 10 ? ('0' + d) : d
+    let h:any = date.getHours()
+    h = h < 10 ? ('0' + h) : h
+    let m:any = date.getMinutes()
+    m = m < 10 ? ('0' + m) : m
+    let s:any = date.getSeconds()
+    s = s < 10 ? ('0' + s) : s
+    let showStr;
+    if(nums&&nums===14){
+      showStr = flag?":":"-";
+      return `${MM}${showStr}${d}`;
+    } else if (nums && nums === 13) {
+      showStr = "-";
+      return `${y}${showStr}${MM}${showStr}${d} ${h}${showStr}${m}`;
+    } else if (nums && nums === 1) {
+      showStr = "-";
+      return `${y}${showStr}${MM}${showStr}${d}`;
+    } else if (nums && nums === 2) {
+      showStr = "/";
+      return `${y}${showStr}${MM}${showStr}${d}`;
+    } else if (nums && nums === 3) {
+      showStr = "-";
+      return `${y}${showStr}${MM}${showStr}${d} ${h}${showStr}${m}${showStr}${s}`;
+    } else if (nums && nums === 4){
+      showStr = ":";
+      return `${m}${showStr}${s}`;
+    } else if (nums && nums === 45){
+      showStr = ":";
+      return `${h}${showStr}${m}`;
+    } else if (nums && nums === 5){
+      showStr = "-";
+      return `${y}${showStr}${MM}`;
+    } else if (nums && nums === 6){
+      showStr = ".";
+      if(flag) showStr = "-"
+      return `${y}${showStr}${MM}${showStr}${d} ${h}:${m}`;
+    } else if (nums && nums === 7){
+      showStr = ".";
+      return `${y}${showStr}${MM}${showStr}${d}`;
+    } else if (nums && nums===8){
+      return {year:`${parseInt(y)}`,month:`${parseInt(MM)}`,date:`${parseInt(d)}`};
+    } else if (nums && nums===9){
+      showStr = ".";
+      return `${y}${showStr}${MM}${showStr}${d} ${h}:${m}:${s}`;
+    } else if (nums && nums===10){
+      return parseInt(timeStr/1000/60/60/24);
+    }
+  }
+}
+
+//日期转化为时间戳
+function formatDate(dateStr) {
+  dateStr = dateStr.replace(/-/g,"/");
+  console.log(`需要转化为时间戳的日期${dateStr}`);
+  let date = new Date(dateStr); // 有三种方式获取 // date.getTime(); // date.valueOf(); // Date.parse(date);
+  return date.getTime();
 }
 
 export {
@@ -420,5 +484,6 @@ export {
 	mottoPassWordMaxCheck,
 	checkPasswordStrength,
 	chooseMediaFile,
-	upLoadMediaFile,
+	formatDated,
+	formatDate,
 }

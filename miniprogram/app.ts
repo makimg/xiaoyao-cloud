@@ -22,7 +22,7 @@ App({
 		let that = this;
 		console.log("分享进入小程序参数", options);
 		if (options && options.url) {
-			showToast(`${xiaoyao_show_text}`,"loading");
+			showToast(`${xiaoyao_show_text}`,"loading",20000);
 			// 小程序的分享-从首页做中转
 			let { url } = options;
 			let resultPath: any = null;

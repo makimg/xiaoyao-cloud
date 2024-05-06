@@ -1,7 +1,7 @@
 const { envList } = require("../../envList");
 const { getFourName, } = require("../../utils/randomName");
 const { getUserModel, showToast } = require("../../utils/util");
-const { cloudFunctions } = require("../../utils/util_cloud");
+const { cloudFunctions, collection_where } = require("../../utils/util_cloud");
 const { QuickStartPoints, QuickStartSteps } = require("./constants");
 
 Page({
@@ -25,6 +25,13 @@ Page({
     //     wx.hideLoading()
     //   }
     // })
+
+
+
+    // 查询数据
+    collection_where("public",{type:"swiper",value:"index"}).then(resultData=>{
+      console.log(resultData,"9999")
+    })
   },
   copyCode(e) {
     const code = e.target?.dataset?.code || '';

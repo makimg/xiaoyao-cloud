@@ -27,9 +27,9 @@
 						<van-tab title="{{item.name}}">
 							<view class="cont">
 								<view class="img_up">
-									<view class="boxs">
+									<view class="boxs" catchtap="onChooseFile" data-cli-index="{{index}}">
 										<block wx:if="{{ocrImgIng}}">
-											<image  class="ocrImgIng" src="{{ocrImgIng}}" mode="widthFix" />
+											<image  class="ocrImgIng" src="{{ocrImgIng}}" />
 										</block>
 										<block wx:else>
 											<view class="ocrUp flex-column-center-center">
@@ -40,7 +40,7 @@
 									</view>
 								</view>
 								<view class="ocr_btns">
-									<van-button class="btns" color="linear-gradient(45deg, #0081ff, #1cbbb4)" >开始识别</van-button>
+									<van-button catchtap="onStartOCR" class="btns" color="linear-gradient(45deg, #0081ff, #1cbbb4)" >开始识别</van-button>
 								</view>
 							</view>
 						</van-tab>

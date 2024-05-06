@@ -21,7 +21,7 @@ const serviceMarket = (serviceAPI,serviceData,callback)=>{
 	let service_info:any = [],serviceAPI_obj={};
 	service_info = service_list.findIndex(x=>{return x.api===serviceAPI});
 	if(service_info>=0) {
-		let {service,api} = service_list[0];
+		let {service,api} = service_list[service_info];
 		serviceAPI_obj = {service,api};
 	}
 	console.log(serviceAPI_obj,serviceData)

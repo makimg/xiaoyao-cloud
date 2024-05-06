@@ -1,5 +1,6 @@
 
 import {navigateTo, xiaoyao_share} from "../../../utils/util";
+import { collection_where } from "../../../utils/util_cloud";
 const XIAOYAO_APP = getApp(); 
 let {globalData:{StatusBar,CustomBar},params_into} = XIAOYAO_APP;
 let GET_INFO_MODAL:any = null;
@@ -161,7 +162,8 @@ Page({
    */
   onLoad(options) {
     let that = this;
-		params_into(options);
+    params_into(options);
+    // that.getSwiper();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -180,6 +182,12 @@ Page({
 			path: "/pages/xiaoyao/home/index",
 		}
     return xiaoyao_share(share_obj);
+  },
+  // 获取首页顶部轮播图数据
+  getSwiper(){
+    collection_where("public",{type:"swiper",value:"index"}).then(resultData=>{
+      console.log(resultData,"9999")
+    })
   },
   // 监听上传用户资料弹框滚动穿透
   modalFlagChange(event: { detail: { modalShow: any; }; }){

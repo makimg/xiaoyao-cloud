@@ -1,3 +1,7 @@
+import { chooseMediaFile, showToast } from "../../../../../../utils/util";
+import { cloudUpFile } from "../../../../../../utils/util_cloud";
+import { serviceMarket } from "../../../../../../utils/wx_service";
+
 // pages/xiaoyao/game/tools/xiaoyaoOcr/play/index.ts
 Page({
 
@@ -32,44 +36,59 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  /**
+   * 选择资料
+   *  */ 
+  onChooseFile(event){
+    let that = this;
+    let {cliIndex} = event.currentTarget.dataset;
+    let {ocr_list} = that.data;
+    let {type} = ocr_list[cliIndex];
+    chooseMediaFile(1,resultData=>{
+      console.log(resultData,"选择的图片");
+      if(resultData&&resultData.errMsg==="chooseMedia:ok"){
+        let {tempFiles} = resultData;
+        that.upLoadFile(type,tempFiles,()=>{
+          let {tempFilePath} = tempFiles[0];
+          showToast("上传成功","none",1500);
+          that.setData({
+            ocrImgIng: tempFilePath
+          })
+        })
+      } else {
+        showToast("选择图片失败","none",1500);
+      }
+    })
+  },
+
+  /** 
+   * 上传资料
+   * */
+  upLoadFile(type,tempFiles,callback){
+    let {tempFilePath} = tempFiles[0];
+    showToast("上传中","loading",20000);
+    cloudUpFile(type,tempFilePath).then(resultData=>{
+      callback && callback(resultData);
+    })
+  },
+  /**
+   * 开始识别
+   *  */ 
+  onStartOCR(){
+    let that = this;
+    let {ocrImgIng,active,ocr_list} = that.data;
+    let {type} = ocr_list[active];
+    let ocrData = {img_url:ocrImgIng,ocr_type:parseInt(type),data_type:3};
+    showToast("开始识别","loading",20000);
+    serviceMarket("OcrAllInOne",ocrData,(res)=>{
+      console.log("识别结果",res);
+      showToast("识别成功","none",1500);
+    })
+  },
 })
