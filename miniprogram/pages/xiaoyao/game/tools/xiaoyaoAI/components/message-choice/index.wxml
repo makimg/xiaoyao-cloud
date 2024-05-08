@@ -1,0 +1,21 @@
+
+
+<view class="choice" wx:if="{{item.question_id}}">
+	<view class="title">
+		<view class="">{{item.question}}</view>
+	</view>
+	<view class="answer">
+		<view class="answer-ul flex-wrap-start">
+			<block wx:for="{{item.answer_options}}" wx:key="answer_index" wx:for-item="answer_item" wx:for-index="answer_index">
+				<view class="answer-li {{item.answer_flag?'choiced':''}} {{item.answer_index===answer_index?'right':''}} {{item.answer_current===answer_index?'cur_choiced':''}}" catchtap="_onChoice" data-item="{{item}}" data-cli-text="{{answer_item}}">{{answer_item}}</view>
+			</block>
+		</view>
+	</view>
+	<view class="result flex-column-start-center" wx:if="{{item.answer_flag}}">
+		<view class="note">{{item.answer_result===1?"你很棒呦！继续加油~":"失误喽~"}}</view>
+		<view class="value">正确答案：{{item.answer_content}}</view>
+	</view>
+</view>
+<view class="user_answer_content" wx:else>
+	<view class="text">{{item.answerInfo.user_answer_content}}</view>
+</view>

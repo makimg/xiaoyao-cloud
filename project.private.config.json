@@ -7,6 +7,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "逍遥古诗问答",
+          "pathName": "pages/xiaoyao/game/tools/xiaoyaoAI/ancientPoetry/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "逍遥海报",
           "pathName": "pages/xiaoyao/poster/index",
           "query": "",

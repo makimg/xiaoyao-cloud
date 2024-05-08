@@ -1,0 +1,11 @@
+
+
+<view class="ancient">
+	<view class="wrap flex-column-start-center">
+		<scroll-view class="body flex1" scroll-y scroll-with-animation="{{true}}" scroll-into-view="{{jumpAim}}" bindscroll="handleScroll">
+				<view class="item_scroll" wx:for="{{questionList}}" wx:key="index" id="xiaoyao_{{index}}" data-index='{{index}}'>
+					<message-list item="{{item}}" bindcheckAnswer="onCheckAnswer"></message-list>
+				</view>
+		</scroll-view>
+	</view>
+</view>

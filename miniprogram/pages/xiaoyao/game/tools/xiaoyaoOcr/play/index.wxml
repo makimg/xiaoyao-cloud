@@ -29,7 +29,7 @@
 								<view class="img_up">
 									<view class="boxs" catchtap="onChooseFile" data-cli-index="{{index}}">
 										<block wx:if="{{ocrImgIng}}">
-											<image  class="ocrImgIng" src="{{ocrImgIng}}" />
+											<image  class="ocrImgIng" src="{{ocrImgIng}}" mode="aspectFit" />
 										</block>
 										<block wx:else>
 											<view class="ocrUp flex-column-center-center">

@@ -1,0 +1,87 @@
+
+
+.choice{
+	width: 100%;
+	.title{
+		width: 100%;
+		font-size: 32rpx;
+		color: #222222;
+		line-height: 42rpx;
+		font-weight: 600;
+		text-align: justify;
+	}
+	.answer{
+		width: 100%;
+		.answer-ul{
+			width: 100%;
+			padding: 30rpx 0 10rpx;
+			.answer-li{
+				display: inline-block;
+				padding: 20rpx;
+				background: #eeeeee8f;
+				border-radius: 10rpx;
+				margin-bottom: 20rpx;
+				margin-right: 20rpx;
+				font-size: 28rpx;
+				line-height: 36rpx;
+				font-weight: 400;
+				color: #333333;
+				letter-spacing: 2rpx;
+				&.choiced{
+					background: #EEEEEE;
+					&.right{
+						color: #FFFFFF;
+						background: linear-gradient(45deg, #9000ff, #5e00ff);
+					}
+					&.cur_choiced{
+						color: #FFFFFF;
+						background: linear-gradient(45deg, #ec008c, #6739b6);
+						&.right{
+							background: linear-gradient(45deg, #9000ff, #5e00ff,#9000ff, #5e00ff);
+						}
+					}
+				}
+			}
+		}
+	}
+	.result{
+		width: 100%;
+		.note{
+			font-size: 32rpx;
+			font-weight: 600;
+			line-height: 48rpx;
+			margin-bottom: 20rpx;
+			background-image: linear-gradient(45deg, #9000ff, #5e00ff,#9000ff, #5e00ff);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+			text-align: center;
+		}
+		.value{
+			display: inline-block;
+			padding: 20rpx;
+			background: linear-gradient(45deg, #9000ff, #5e00ff,#9000ff, #5e00ff);
+			border-radius: 10rpx;
+			font-size: 28rpx;
+			line-height: 36rpx;
+			font-weight: 400;
+			color: #FFFFFF;
+			letter-spacing: 2rpx;
+		}
+	}
+}
+.user_answer_content{
+	width: 100%;
+	display: inline-block;
+	.text{
+		background-image: linear-gradient(45deg, #9000ff, #5e00ff,#9000ff, #5e00ff);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		text-align: center;
+		font-size: 28rpx;
+		line-height: 36rpx;
+		font-weight: 600;
+		letter-spacing: 2rpx;
+	}
+}

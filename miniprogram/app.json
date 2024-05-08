@@ -49,6 +49,7 @@
         "allotGroup/play/index",
         "pumpPrize/play/index",
         "tools/xiaoyaoAI/play/index",
+        "tools/xiaoyaoAI/ancientPoetry/index",
         "tools/xiaoyaoTranslate/play/index",
         "tools/xiaoyaoOcr/play/index"
       ],
@@ -127,5 +128,6 @@
         "selectedIconPath": "images/icons/usercenter-active.png"
       }
     ]
-  }
+  },
+  "requiredBackgroundModes": ["audio"]
 }

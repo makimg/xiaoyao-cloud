@@ -1,0 +1,25 @@
+
+
+.message-items{
+	width: 100%;
+	.items-cont{
+		width: 100%;
+		padding: 30rpx;
+		.cont-boxs{
+			width: 100%;
+			.question-avatar image,.self-avatar image{border-radius: 10rpx;}
+			.question-avatar{
+				margin-right: 20rpx;
+			}
+			.self-avatar{
+				margin-left: 20rpx;
+			}
+			.message-cont{
+				max-width: 100%;
+				padding: 30rpx;
+				background: #FFFFFF;
+				border-radius: 12rpx;
+			}
+		}
+	}
+}

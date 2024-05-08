@@ -1,0 +1,21 @@
+
+
+.ancient{
+	width: 100%;
+	.wrap{
+		width: 100%;
+		height: 100vh;
+		background: linear-gradient(45deg, #9000ff, #5e00ff,#9000ff, #5e00ff);
+		.body{
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(45deg, #9000ff, #5e00ff,#9000ff, #5e00ff);
+			.item_scroll{
+				width: 100%;
+				&:last-child{
+					padding-bottom: 120rpx;
+				}
+			}
+		}
+	}
+}
