@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/xiaoyao/loginAccount/index",
     "pages/xiaoyao/home/index",
+    "pages/xiaoyao/loginAccount/index",
     "pages/xiaoyao/login/index",
     "pages/xiaoyao/about/index",
     "pages/xiaoyao/about/feedback/index",
@@ -51,7 +51,8 @@
         "tools/xiaoyaoAI/play/index",
         "tools/xiaoyaoAI/ancientPoetry/index",
         "tools/xiaoyaoTranslate/play/index",
-        "tools/xiaoyaoOcr/play/index"
+        "tools/xiaoyaoOcr/play/index",
+        "tools/randomGeneration/play/index"
       ],
       "plugins": {
         "chatbot": {

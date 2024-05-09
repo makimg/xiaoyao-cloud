@@ -18,7 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-		_modal: true,
+		_modal: false,
 		_user_nickname: "",
 		_user_avatar: "",
   },

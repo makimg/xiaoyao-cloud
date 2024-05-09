@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
+    "grid-tile": "../components/grid-tile/index",
     "getInfoModal": "../../../components/getInfoModal/index"
   }
 }

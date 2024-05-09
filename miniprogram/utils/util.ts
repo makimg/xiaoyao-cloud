@@ -452,6 +452,12 @@ function formatDate(dateStr) {
   return date.getTime();
 }
 
+function handelCloudImagePath(imgUrl=""){
+	if(!imgUrl||imgUrl==""||imgUrl==undefined) return "";
+	let IMGDOMAIN = "https://7369-silents-0g9acbkb68a4da06-1259633115.tcb.qcloud.la/xiaoyao/static";
+	return `${IMGDOMAIN}/${imgUrl}`;
+}
+
 export {
 	formatTime,
 	getWxRequest,
@@ -486,4 +492,5 @@ export {
 	chooseMediaFile,
 	formatDated,
 	formatDate,
+	handelCloudImagePath,
 }

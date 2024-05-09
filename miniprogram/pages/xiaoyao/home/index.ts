@@ -1,5 +1,5 @@
 
-import {navigateTo, xiaoyao_share} from "../../../utils/util";
+import {handelCloudImagePath, navigateTo, xiaoyao_share} from "../../../utils/util";
 import { collection_where } from "../../../utils/util_cloud";
 const XIAOYAO_APP = getApp(); 
 let {globalData:{StatusBar,CustomBar},params_into} = XIAOYAO_APP;
@@ -18,61 +18,85 @@ Page({
       {
         name: "去选择",
         name_key: "select",
+        img_url: handelCloudImagePath("select.png?sign=155e13082448a314a1d9a475fcc4d5a3&t=1715245787"),
         className: "bg-gradual-red",
       },
       {
         name: "逍遥微聊",
         name_key: "tools/xiaoyaoAI",
+        img_url: handelCloudImagePath("chat.png?sign=410f2f3faeebe3caaacc087550ab8e80&t=1715246045"),
         className: "h4 bg-gradual-black",
       },
       {
         name: "排顺序",
         name_key: "sort",
+        img_url: handelCloudImagePath("sort.png?sign=fd40113c080afe3bcdf926612dba9590&t=1715246114"),
         className: "h4 bg-gradual-black",
       },
       {
         name: "去投票",
         name_key: "vote",
+        img_url: "",
         className: "h4 bg-gradual-black1",
+      },
+      {
+        name: "逍遥古诗答疑",
+        name_key: "tools/xiaoyaoAI/ancientPoetry",
+        img_url: handelCloudImagePath("knowledge-2.png?sign=235be83bcbecf4c997ce17b5572f2c1f&t=1715246478"),
+        className: "h4 bg-gradual-black",
       },
       {
         name: "来抓阄",
         name_key: "drawLot",
+        img_url: "",
         className: "bg-gradual-black2",
       },
       {
         name: "逍遥翻译",
         name_key: "tools/xiaoyaoAI",
+        img_url: "",
         className: "h4 bg-gradual-black",
       },
       {
         name: "分任务",
         name_key: "allotTask",
+        img_url: "",
         className: "h3 bg-gradual-black3",
+      },
+      {
+        name: "随机生成",
+        name_key: "tools/randomGeneration",
+        img_url: handelCloudImagePath("random.png?sign=f9b09beab95535f6ce3322f8d8f68b34&t=1715246228"),
+        className: "h4 bg-gradual-black",
       },
       {
         name: "去接龙",
         name_key: "solitaire",
+        img_url: handelCloudImagePath("dragon-1.png?sign=51b038acd09d8c0b01f643fd0a4a1a05&t=1715246365"),
         className: "h5 bg-gradual-black4",
       },
       {
         name: "来抽签",
         name_key: "lottery",
+        img_url: handelCloudImagePath("lottery.png?sign=42d735dc79ad2e65afe0b9a87cb955d6&t=1715246762"),
         className: "bg-gradual-black5",
       },
       {
         name: "去分组",
         name_key: "allotGroup",
+        img_url: handelCloudImagePath("vote.png?sign=a0df23ea93cbd219ef3623b3bae0e381&t=1715247270"),
         className: "h3 bg-gradual-black6",
       },
       {
         name: "逍遥智能识别",
         name_key: "tools/xiaoyaoOcr",
+        img_url: handelCloudImagePath("identify.png?sign=64d42c2b338deb627123af00688ff964&t=1715246166"),
         className: "h4 bg-gradual-black",
       },
       {
         name: "去抽奖",
         name_key: "drawPrize",
+        img_url: handelCloudImagePath("lottery-1.png?sign=d4b4976d3231d07d234509b15cfdb8d3&t=1715247320"),
         className: "pumpPrize bg-gradual-black7",
       },
     ],
@@ -155,6 +179,9 @@ Page({
         button_flag: true,
       },
     ],
+    crossAxisCount: 2,
+    crossAxisGap: 15,
+    mainAxisGap: 15,
   },
 
   /**
@@ -163,7 +190,7 @@ Page({
   onLoad(options) {
     let that = this;
     params_into(options);
-    // that.getSwiper();
+    that.getSwiper();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -185,8 +212,14 @@ Page({
   },
   // 获取首页顶部轮播图数据
   getSwiper(){
+    let that = this;
+    let {swiperList} = that.data;
     collection_where("public",{type:"swiper",value:"index"}).then(resultData=>{
       console.log(resultData,"9999")
+      let {list} = resultData;
+      if(list&&list.length>0){
+        that.setData({swiperList:list})
+      }
     })
   },
   // 监听上传用户资料弹框滚动穿透
