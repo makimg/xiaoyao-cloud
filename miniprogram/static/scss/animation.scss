@@ -13,7 +13,8 @@
 [class*=animation-] {
     animation-duration: .5s;
     animation-timing-function: ease-out;
-    animation-fill-mode: both
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
 }
 
 .animation-fade {

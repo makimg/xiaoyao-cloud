@@ -1,6 +1,6 @@
 
 page {
-  // background-image: var(--gradualBlue);
+  background-image: var(--gradualBlue);
   width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -112,7 +112,7 @@ page {
 .DrawerPage {
   width: 100vw;
   height: 100vh;
-  // background-image: var(--gradualBlue);
+  background-image: var(--gradualBlue);
   transition: all 0.4s;
   position: fixed;
   &.show {

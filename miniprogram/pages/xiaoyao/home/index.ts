@@ -43,7 +43,7 @@ Page({
         name: "逍遥古诗答疑",
         name_key: "tools/xiaoyaoAI/ancientPoetry",
         img_url: handelCloudImagePath("knowledge-2.png?sign=235be83bcbecf4c997ce17b5572f2c1f&t=1715246478"),
-        className: "h4 bg-gradual-black",
+        className: "h4 bg-gradual-black10",
       },
       {
         name: "来抓阄",
@@ -61,13 +61,13 @@ Page({
         name: "分任务",
         name_key: "allotTask",
         img_url: "",
-        className: "h3 bg-gradual-black3",
+        className: "h3",
       },
       {
         name: "随机生成",
         name_key: "tools/randomGeneration",
         img_url: handelCloudImagePath("random.png?sign=f9b09beab95535f6ce3322f8d8f68b34&t=1715246228"),
-        className: "h4 bg-gradual-black",
+        className: "h4",
       },
       {
         name: "去接龙",
@@ -85,7 +85,7 @@ Page({
         name: "去分组",
         name_key: "allotGroup",
         img_url: handelCloudImagePath("vote.png?sign=a0df23ea93cbd219ef3623b3bae0e381&t=1715247270"),
-        className: "h3 bg-gradual-black6",
+        className: "h3",
       },
       {
         name: "逍遥智能识别",

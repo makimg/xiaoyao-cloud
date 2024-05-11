@@ -3,9 +3,9 @@
 <view class="DrawerPage  {{modalName=='viewModal'?'show':''}}">
 	<view class="index_pages">
 		<view class="pages_wrap van-safe">
-			<!-- <view class="pages_head bg-gradual-blue animation-slide-top">
+			<view class="pages_head bg-gradual-blue animation-slide-top">
 				<view class="head_swiper">
-					<swiper class="screen-swiper square-dot rights-doteds" indicator-dots="{{false}}" circular="{{true}}" autoplay="true" interval="5000" duration="500">
+					<swiper class="screen-swiper square-dot rights-doteds" indicator-dots="{{false}}" circular="{{true}}" autoplay="{{false}}" interval="5000" duration="500">
 						<swiper-item wx:for="{{swiperList}}" wx:key="index">
 							<image src="{{item.img_url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
 							<video src="{{item.video_url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
@@ -23,7 +23,7 @@
 						<view class="head_icon"></view>
 					</view>
 				</view>
-			</view> -->
+			</view>
 			<view class="pages_body">
 				<scroll-view scroll-y style="width: 100%; height: calc(100vh - 460rpx);" type="custom">
 					<grid-view type="masonry" cross-axis-count="{{crossAxisCount}}" cross-axis-gap="{{crossAxisGap}}" main-axis-gap="{{mainAxisGap}}">

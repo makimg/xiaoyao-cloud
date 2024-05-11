@@ -56,6 +56,7 @@
 	--gradualBlack7: linear-gradient(45deg, #f55911, #59cefc);
 	--gradualBlack8: linear-gradient(45deg, #990d99, #98d33a);
 	--gradualBlack9: linear-gradient(45deg, #df3a42, #0dadec);
+	--gradualBlack10: linear-gradient(45deg, #e6e0c6,#e6e0c6);
 
 	/* 阴影透明色 */
 	--ShadowSize: 6rpx 6rpx 8rpx;
@@ -3654,6 +3655,18 @@ scroll-view.cu-steps .cu-item {
 }
 .bg-gradual-black7 {
 	background-image: var(--gradualBlack7);
+	color: var(--white);
+}
+.bg-gradual-black8 {
+	background-image: var(--gradualBlack8);
+	color: var(--white);
+}
+.bg-gradual-black9 {
+	background-image: var(--gradualBlack9);
+	color: var(--white);
+}
+.bg-gradual-black10 {
+	background-image: var(--gradualBlack10);
 	color: var(--white);
 }
 
