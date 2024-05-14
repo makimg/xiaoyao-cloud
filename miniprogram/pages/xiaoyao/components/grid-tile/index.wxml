@@ -1,7 +1,10 @@
 
 <view class="lite animation-{{items.name?'slide-bottom':''}} {{items.className}}" style="animation-delay: {{(index)*0.1}}s;">
   <view class="cont">
-    <image class="img" mode="widthFix" src="{{items.img_url}}" />
-    <view class="title">{{items.name}}</view>
+    <view class="box">
+      <image class="img" mode="widthFix" src="{{items.img_url}}" />
+      <view class="title">{{items.name}}</view>
+    </view>
+    <view class="label"><text class="label-text">娱乐</text></view>
   </view>
 </view>
