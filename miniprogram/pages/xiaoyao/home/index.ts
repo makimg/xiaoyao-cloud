@@ -18,19 +18,19 @@ Page({
       {
         name: "去选择",
         name_key: "select",
-        img_url: handelCloudImagePath("select.png?sign=155e13082448a314a1d9a475fcc4d5a3&t=1715245787"),
+        img_url: handelCloudImagePath("static","select.png?sign=155e13082448a314a1d9a475fcc4d5a3&t=1715245787"),
         className: "bg-gradual-red",
       },
       {
         name: "逍遥微聊",
         name_key: "tools/xiaoyaoAI",
-        img_url: handelCloudImagePath("chat.png?sign=410f2f3faeebe3caaacc087550ab8e80&t=1715246045"),
+        img_url: handelCloudImagePath("static","chat.png?sign=410f2f3faeebe3caaacc087550ab8e80&t=1715246045"),
         className: "h4 bg-gradual-black",
       },
       {
         name: "排顺序",
         name_key: "sort",
-        img_url: handelCloudImagePath("sort.png?sign=fd40113c080afe3bcdf926612dba9590&t=1715246114"),
+        img_url: handelCloudImagePath("static","sort.png?sign=fd40113c080afe3bcdf926612dba9590&t=1715246114"),
         className: "h4 bg-gradual-black",
       },
       {
@@ -42,7 +42,7 @@ Page({
       {
         name: "逍遥古诗答疑",
         name_key: "tools/xiaoyaoAI/ancientPoetry",
-        img_url: handelCloudImagePath("knowledge-2.png?sign=235be83bcbecf4c997ce17b5572f2c1f&t=1715246478"),
+        img_url: handelCloudImagePath("static","knowledge-2.png?sign=235be83bcbecf4c997ce17b5572f2c1f&t=1715246478"),
         className: "h4 bg-gradual-black10",
       },
       {
@@ -66,37 +66,37 @@ Page({
       {
         name: "随机生成",
         name_key: "tools/randomGeneration",
-        img_url: handelCloudImagePath("random.png?sign=f9b09beab95535f6ce3322f8d8f68b34&t=1715246228"),
+        img_url: handelCloudImagePath("static","random.png?sign=f9b09beab95535f6ce3322f8d8f68b34&t=1715246228"),
         className: "h4",
       },
       {
         name: "去接龙",
         name_key: "solitaire",
-        img_url: handelCloudImagePath("dragon-1.png?sign=51b038acd09d8c0b01f643fd0a4a1a05&t=1715246365"),
+        img_url: handelCloudImagePath("static","dragon-1.png?sign=51b038acd09d8c0b01f643fd0a4a1a05&t=1715246365"),
         className: "h5 bg-gradual-black4",
       },
       {
         name: "来抽签",
         name_key: "lottery",
-        img_url: handelCloudImagePath("lottery.png?sign=42d735dc79ad2e65afe0b9a87cb955d6&t=1715246762"),
+        img_url: handelCloudImagePath("static","lottery.png?sign=42d735dc79ad2e65afe0b9a87cb955d6&t=1715246762"),
         className: "bg-gradual-black5",
       },
       {
         name: "去分组",
         name_key: "allotGroup",
-        img_url: handelCloudImagePath("vote.png?sign=a0df23ea93cbd219ef3623b3bae0e381&t=1715247270"),
+        img_url: handelCloudImagePath("static","vote.png?sign=a0df23ea93cbd219ef3623b3bae0e381&t=1715247270"),
         className: "h3",
       },
       {
         name: "逍遥智能识别",
         name_key: "tools/xiaoyaoOcr",
-        img_url: handelCloudImagePath("identify.png?sign=64d42c2b338deb627123af00688ff964&t=1715246166"),
+        img_url: handelCloudImagePath("static","identify.png?sign=64d42c2b338deb627123af00688ff964&t=1715246166"),
         className: "h4 bg-gradual-black",
       },
       {
         name: "去抽奖",
         name_key: "drawPrize",
-        img_url: handelCloudImagePath("lottery-1.png?sign=d4b4976d3231d07d234509b15cfdb8d3&t=1715247320"),
+        img_url: handelCloudImagePath("static","lottery-1.png?sign=d4b4976d3231d07d234509b15cfdb8d3&t=1715247320"),
         className: "pumpPrize bg-gradual-black7",
       },
     ],

@@ -1,3 +1,5 @@
+import { cloudFunctions } from "./util_cloud"
+
 const formatTime = (date: Date) => {
 	const year = date.getFullYear()
 	const month = date.getMonth() + 1
@@ -452,12 +454,33 @@ function formatDate(dateStr) {
   return date.getTime();
 }
 
-function handelCloudImagePath(imgUrl=""){
+function handelCloudImagePath(fileName,imgUrl=""){
 	if(!imgUrl||imgUrl==""||imgUrl==undefined) return "";
-	let IMGDOMAIN = "https://7369-silents-0g9acbkb68a4da06-1259633115.tcb.qcloud.la/xiaoyao/static";
-	return `${IMGDOMAIN}/${imgUrl}`;
+	let DOMAIN = wx.getStorageSync("DOMAIN");
+	let cloudDomain:any = null;
+	if(DOMAIN&&DOMAIN!=undefined&&DOMAIN!=null&&DOMAIN!=""){
+		cloudDomain = DOMAIN.cloudDomain;
+	} else {
+		let resultData:any = initCloudMain();
+		cloudDomain = resultData.cloudDomain;
+	}
+	let IMGDOMAIN = `https://7369-${cloudDomain}-1259633115.tcb.qcloud.la/xiaoyao/${fileName}`;
+	let resultImagePath = `${IMGDOMAIN}/${imgUrl}`;
+	return resultImagePath;
 }
 
+async function initCloudMain(){
+	let event_data = {funName:"xiaoyao_getCloudDomain",params_data:{}};
+	return await new Promise((resolve)=>{
+		cloudFunctions(event_data,resultData=>{
+			console.log(resultData,"888888");
+			if(resultData&&resultData.result){
+				wx.setStorageSync("DOMAIN",resultData.result);
+				resolve(resultData.result)
+			}
+		})
+	})
+}
 export {
 	formatTime,
 	getWxRequest,
@@ -493,4 +516,5 @@ export {
 	formatDated,
 	formatDate,
 	handelCloudImagePath,
+	initCloudMain,
 }

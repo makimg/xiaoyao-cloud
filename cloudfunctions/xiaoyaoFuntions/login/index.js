@@ -10,7 +10,7 @@ const user_db = db.collection('user');
 exports.main = async (event, context) => {
 	// 获取基础信息
 	const wxContext = cloud.getWXContext();
-	const {OPENID,APPID,UNIONID} = wxContext;
+	const {OPENID,APPID,UNIONID,CLIENTIP,CLIENTIPV6} = wxContext;
 	console.log("云端获取到的用户信息",event);
 	let {params_data} = event;
 	let {accoutNumber,accoutPassword,userModel} = params_data;
@@ -27,7 +27,7 @@ exports.main = async (event, context) => {
 		await user_db.where({OPENID}).update({data: {needWinDowInfo,windowInfo,deviceInfo}})
 	} else {
 		// 新用户增加记录
-		let create_new_user_info = {needWinDowInfo,windowInfo,deviceInfo,OPENID,APPID,UNIONID,userInfo:{accoutNumber,accoutPassword,}};
+		let create_new_user_info = {needWinDowInfo,windowInfo,deviceInfo,OPENID,APPID,UNIONID,CLIENTIP,CLIENTIPV6,userInfo:{accoutNumber,accoutPassword,}};
 		create_new_user_info.userInfo["register_time"] = new Date().getTime();
 		create_new_user_info.userInfo["user_type"] = "new";
 		create_new_user_info.userInfo["login_flag"] = false;

@@ -2,6 +2,7 @@
 const xiaoyao_login = require("./login/index");
 const xiaoyao_getUserInfo = require("./getUserInfo/index");
 const xiaoyao_sendSMS = require("./sendSMS/index");
+const xiaoyao_getCloudDomain = require("./getCloudDomain/index");
 // 云函数入口函数
 exports.main = async (event, context) => {
   let {funName} = event;
@@ -12,6 +13,8 @@ exports.main = async (event, context) => {
       return await xiaoyao_getUserInfo.main(event, context);
     case 'xiaoyao_sendSMS':
       return await xiaoyao_sendSMS.main(event, context);
+    case 'xiaoyao_getCloudDomain':
+      return await xiaoyao_getCloudDomain.main(event, context);
   }
 };
         
