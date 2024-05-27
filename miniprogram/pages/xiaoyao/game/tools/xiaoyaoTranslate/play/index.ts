@@ -10,7 +10,7 @@ Page({
   data: {
     multilingualMT_list,
     autosize: { maxHeight: 100, minHeight: 100 },
-    keyword: "你在干什么",
+    keyword: "",
     result: "",
   },
 

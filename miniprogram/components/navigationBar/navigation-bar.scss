@@ -1,7 +1,17 @@
 
 
 .navigationBar{
+  z-index: 9999;
   &.devtools{
     display: none;
+  }
+}
+
+
+.cu-bar{
+  z-index: 9999;
+  &.transparent{
+    background: transparent;
+    &.fixed{box-shadow: none;}
   }
 }

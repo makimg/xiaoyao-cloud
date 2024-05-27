@@ -1,4 +1,4 @@
-import { showToast } from "../../../../../../utils/util";
+import { hideToast, navigateBack, showToast } from "../../../../../../utils/util";
 import { chatbot_nlp, initChatBot } from "../../../utils/utils";
 Page({
 
@@ -69,6 +69,8 @@ Page({
           },2000)
         })
       } else {
+        showToast("服务器宕机，请稍后问答！","none",1500);
+        hideToast(()=>{navigateBack(1);})
         console.log("初始化失败")
       }
     })

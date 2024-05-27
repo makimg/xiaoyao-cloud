@@ -3,18 +3,18 @@
 	<view class="wrap">
 		<view class="main">
 			<view class="bars">
-				<!-- <navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
+				<navigationBar bgColor="bg-gradual-blue" isBack="{{true}}">
 					<view slot="backText">返回</view>
 					<view slot="content">逍遥文本识别</view>
-				</navigationBar> -->
+				</navigationBar>
 			</view>
 			<view class="notice">
-				<!-- <van-notice-bar
+				<van-notice-bar
 					color="#FFFFFF"
 					background="linear-gradient(45deg, #0081ff, #1cbbb4)"
 					left-icon="info-o"
 					text="上传图片智能识别文本内容，即可方便、快捷的进行文本录入和文档管理！"
-				/> -->
+				/>
 			</view>
 			<view class="body">
 				<van-tabs 

@@ -5,7 +5,7 @@
 		<view class="pages_wrap van-safe">
 			<view class="pages_head bg-gradual-blue animation-slide-top">
 				<view class="head_swiper">
-					<swiper class="screen-swiper square-dot rights-doteds" indicator-dots="{{false}}" circular="{{true}}" autoplay="{{false}}" interval="5000" duration="500">
+					<swiper class="screen-swiper square-dot rights-doteds" indicator-dots="{{false}}" circular="{{true}}" autoplay="{{autoplay}}" interval="{{3000}}" duration="500">
 						<swiper-item wx:for="{{swiperList}}" wx:key="index">
 							<image src="{{item.img_url}}" mode="aspectFill" wx:if="{{item.type=='image'&&item.img_url}}"></image>
 							<video src="{{item.video_url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
@@ -27,7 +27,7 @@
 			<view class="pages_body">
 				<scroll-view scroll-y style="width: 100%; height: calc(100vh - 460rpx);" type="custom">
 					<grid-view type="masonry" cross-axis-count="{{crossAxisCount}}" cross-axis-gap="{{crossAxisGap}}" main-axis-gap="{{mainAxisGap}}">
-						<grid-tile wx:for="{{game_array}}" wx:key="id" index="{{index}}" items="{{item}}"></grid-tile>
+						<grid-tile catchtap="toPLay" data-keys="{{item.path_keys}}" wx:for="{{game_array}}" wx:key="id" index="{{index}}" items="{{item}}"></grid-tile>
 					</grid-view>
 				</scroll-view>
 			</view>

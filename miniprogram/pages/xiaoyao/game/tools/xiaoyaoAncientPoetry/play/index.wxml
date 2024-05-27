@@ -1,6 +1,12 @@
 
 
 <view class="ancient">
+	<view class="wrap-bar">
+		<navigationBar bgColor="transparent" isBack="{{true}}">
+			<view slot="backText">返回</view>
+			<view slot="content">逍遥古诗问答</view>
+		</navigationBar>
+	</view>
 	<view class="wrap flex-column-start-center">
 		<scroll-view class="body flex1" scroll-y scroll-with-animation="{{true}}" scroll-into-view="{{jumpAim}}" bindscroll="handleScroll">
 				<view class="item_scroll" wx:for="{{questionList}}" wx:key="index" id="xiaoyao_{{index}}" data-index='{{index}}'>

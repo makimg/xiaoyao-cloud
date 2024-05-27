@@ -32,7 +32,16 @@ const collection_where = (collectionName, whereData) => {
 			success: function (res) {
 				if (res && res.data && res.data.length > 0) {
 					console.log(res, "查询成功")
-					resolve(res.data[0]);
+					let resultData = {};
+					let resData = res.data[0];
+					let resList = [];
+					if(whereData.type==="swiper"||whereData.type==="game"){
+						resData.list.forEach(element => {
+							if(element.allFlag) resList.push(element);
+						});
+					}
+					resultData = {...resData,list:resList};
+					resolve(resultData);
 				} else {
 					console.log(res, "查询失败")
 					resolve(res);

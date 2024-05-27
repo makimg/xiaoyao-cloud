@@ -49,7 +49,7 @@
         "allotGroup/play/index",
         "pumpPrize/play/index",
         "tools/xiaoyaoAI/play/index",
-        "tools/xiaoyaoAI/ancientPoetry/index",
+        "tools/xiaoyaoAncientPoetry/play/index",
         "tools/xiaoyaoTranslate/play/index",
         "tools/xiaoyaoOcr/play/index",
         "tools/randomGeneration/play/index"
